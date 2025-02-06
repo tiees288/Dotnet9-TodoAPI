@@ -7,7 +7,7 @@ namespace TodoApi.Entity
      /// <summary>
      /// Represents a Todo Data Transfer Object.
      /// </summary>
-     public class TodoDTO
+     public class Todo
      {
           /// <summary>
           /// Gets or sets the unique identifier for the Todo item.
@@ -41,7 +41,10 @@ namespace TodoApi.Entity
           /// <param name="name">The name of the Todo item.</param>
           /// <param name="isComplete">A value indicating whether the Todo item is complete.</param>
           /// <param name="createdDate">The date and time when the Todo item was created.</param>
-          public TodoDTO(
+          
+          public ICollection<TodoDetail> TodoDetails { get; set; }
+
+          public Todo(
                string name = "",
                bool isComplete = false,
                DateTime createdDate = default

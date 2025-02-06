@@ -71,7 +71,7 @@ public class TodoService : ITodoService
      public async Task<BaseResponse<TodoItemModel>> AddTodoAsync(TodoItemModel todo)
      {
 
-          var entity = new TodoDTO
+          var entity = new Todo
           {
                Name = todo.Name,
                IsComplete = todo.IsComplete ?? false

@@ -22,7 +22,7 @@ namespace TodoApi.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("TodoApi.Entity.TodoDTO", b =>
+            modelBuilder.Entity("TodoApi.Entity.Todo", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -46,6 +46,49 @@ namespace TodoApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TodoItems");
+                });
+
+            modelBuilder.Entity("TodoApi.Entity.TodoDetail", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<long>("TodoId")
+                        .HasColumnType("bigint")
+                        .HasColumnName("TodoId");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TodoId");
+
+                    b.ToTable("TodoDetails");
+                });
+
+            modelBuilder.Entity("TodoApi.Entity.TodoDetail", b =>
+                {
+                    b.HasOne("TodoApi.Entity.Todo", null)
+                        .WithMany("TodoDetails")
+                        .HasForeignKey("TodoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("TodoApi.Entity.Todo", b =>
+                {
+                    b.Navigation("TodoDetails");
                 });
 #pragma warning restore 612, 618
         }

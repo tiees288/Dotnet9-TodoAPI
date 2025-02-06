@@ -19,6 +19,7 @@ namespace TodoApi.DBContext
                optionsBuilder.UseNpgsql(Configuration.GetConnectionString("PostgresConnection"));
           }
 
-          public DbSet<TodoDTO> TodoItems { get; set; }
+          public DbSet<Todo> TodoItems { get; set; }
+          public DbSet<TodoDetail> TodoDetails { get; set; }
      }
 }

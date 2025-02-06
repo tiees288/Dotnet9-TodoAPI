@@ -65,39 +65,39 @@
         <member name="M:TodoApi.Migrations.init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
-        <member name="T:TodoApi.Entity.TodoDTO">
+        <member name="T:TodoApi.Entity.Todo">
             <summary>
             Represents a Todo Data Transfer Object.
             </summary>
         </member>
-        <member name="P:TodoApi.Entity.TodoDTO.Id">
+        <member name="P:TodoApi.Entity.Todo.Id">
             <summary>
             Gets or sets the unique identifier for the Todo item.
             </summary>
         </member>
-        <member name="P:TodoApi.Entity.TodoDTO.Name">
+        <member name="P:TodoApi.Entity.Todo.Name">
             <summary>
             Gets or sets the name of the Todo item.
             </summary>
         </member>
-        <member name="P:TodoApi.Entity.TodoDTO.IsComplete">
+        <member name="P:TodoApi.Entity.Todo.IsComplete">
             <summary>
             Gets or sets a value indicating whether the Todo item is complete.
             </summary>
         </member>
-        <member name="P:TodoApi.Entity.TodoDTO.CreatedDate">
+        <member name="P:TodoApi.Entity.Todo.CreatedDate">
             <summary>
             Gets or sets the date and time when the Todo item was created.
             </summary>
         </member>
-        <member name="P:TodoApi.Entity.TodoDTO.UpdatedDate">
+        <member name="P:TodoApi.Entity.Todo.UpdatedDate">
             <summary>
             Gets or sets the date and time when the Todo item was last updated.
             </summary>
         </member>
-        <member name="M:TodoApi.Entity.TodoDTO.#ctor(System.String,System.Boolean,System.DateTime)">
+        <member name="P:TodoApi.Entity.Todo.TodoDetails">
             <summary>
-            Initializes a new instance of the <see cref="T:TodoApi.Entity.TodoDTO"/> class.
+            Initializes a new instance of the <see cref="!:TodoDTO"/> class.
             </summary>
             <param name="name">The name of the Todo item.</param>
             <param name="isComplete">A value indicating whether the Todo item is complete.</param>
