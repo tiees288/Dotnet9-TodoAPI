@@ -23,5 +23,12 @@ namespace TodoApi.Models
         /// </summary>
         [Required(ErrorMessage = "IsComplete is required.")]
         public bool? IsComplete { get; set; }
+
+        public TodoItemModel(long id, string name, bool isComplete)
+        {
+            Id = id;
+            Name = name;
+            IsComplete = isComplete;
+        }
     }
 }
