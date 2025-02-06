@@ -16,7 +16,8 @@ namespace TodoApi.DBContext
 
           protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
           {
-               optionsBuilder.UseNpgsql(Configuration.GetConnectionString("PostgresConnection"));
+               var connectionString = Configuration["ConnectionStrings:PostgresConnection"];
+               optionsBuilder.UseNpgsql(connectionString);
           }
 
           public DbSet<Todo> TodoItems { get; set; }

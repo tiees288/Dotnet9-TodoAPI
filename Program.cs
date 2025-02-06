@@ -4,6 +4,12 @@ using TodoApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add user secrets if in development environment
+if (builder.Environment.IsDevelopment())
+{
+    builder.Configuration.AddUserSecrets<Program>();
+}
+
 // Add services to the container.
 builder.Services.AddServices();
 builder.Services.AddDbContext<AppDBContext>();
